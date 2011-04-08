@@ -1,0 +1,166 @@
+$light_blue: #ccf;
+$black: #000;
+$red: #aa0000;
+
+$link_color:#33c;
+
+$done_color: #8c8;
+$assigned_color: #7b7;
+$task_color: #800;
+
+
+$border_color:#888;
+$border:1px solid $border_color;
+
+
+$span_space: 4px;
+
+
+#header {
+  
+}
+
+#list, #view {
+  position:fixed;
+  top:50px;
+  bottom:0px;
+  padding:5px;  
+}
+
+#list {
+  left:0px;
+  width:400px;
+	textarea {
+	  padding:5px;
+		width:100%;
+	}
+}
+
+#view {
+  left:420px;
+  right:0;
+
+	ul#tabs {
+		overflow:hidden;
+		margin-bottom:5px;
+		li {
+			float:left;
+			padding:0 10px;
+			cursor:pointer;
+			color:$link_color;
+		}
+		li.selected {
+			color:$black;
+		}
+		border-bottom:$border;
+	}
+
+	#listView, #calendarView {
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+		top:27px;
+		overflow-y:auto;
+		z-index:0;
+	}
+	
+	.selected {
+		z-index:1;
+	}
+
+	#listView {
+		.tl-projectList {
+			float:left;
+			width:49%;
+			.tl-project {
+				.tl-project {
+					margin-left:20px;
+				}
+				h3 {
+					background:$light_blue;
+					font-size:115%;
+					padding-left:5px;
+				}
+				span.tl-lineNumber {
+					display:none;
+				}
+				ul.tl-taskList {
+					margin:5px 0 15px 5px;
+					li {
+						list-style:inside disc none;
+						color:$task_color;
+						span.tl-taskName {
+							color:$black;
+						}
+						span.tl-time {
+							font-weight:bold;
+							margin-right:$span_space;
+						}
+						span.tl-duration {
+							margin-left:$span_space;
+							color:$red;
+						}
+						ul.tl-subTaskList {
+							margin-left:15px;
+						}
+					}
+					li.tl-task-done {
+						padding-left:13px;
+						list-style:none;
+						
+						> span.tl-taskName, > span.tl-time {
+							color:$done_color;
+						}
+					}
+					li.tl-task-timed {
+						list-style:none;
+					}
+					li.tl-task-assigned {
+						color:$assigned_color;
+						list-style-type:circle;
+						> span.taskName {
+							color:$assigned_color;
+						}
+					}
+					li.tl-task {
+						> span.taskName {
+							color:$black;
+						}
+					}
+					li.tl-blank-task {
+						list-style:none;
+						display:none;
+					}
+					li.tl-first-blank-task {
+						display:list-item;
+						height:1em;
+					}
+				}
+			}
+			.tl-date {
+				h3 {
+		
+				}
+				ul.tl-taskList {
+		
+				}
+			}
+		}
+		.tl-dateProjects {
+			border-right:$border;
+			padding-right:5px;
+		}
+		.tl-generalProjects {
+			padding-left:5px;
+			border-left:$border;
+			margin-left:-1px;
+		}
+	}
+	
+	#calendarView {
+	
+	}
+
+}
+

@@ -1,0 +1,25 @@
+:javascript
+  lastList = "#{@list.content.gsub(/[\r\n]/, '\\n')}"
+
+#list
+  .stateIndicator Saved
+  - remote_form_for @list, :html=>{:autocomplete=>"off"}, :update=>"views", :complete=> "saved();", :loading=> "saving();" do |f|
+    = f.text_area :content, :class=>"list"
+    %br
+    %br
+    = f.submit "Save", :class=>'stateIndicator'
+
+  = observe_field("list_content", :frequency=>0.5, :function=>"saveUpdateListView(element);")
+
+#view
+  %ul#tabs
+    %li#listViewTab.selected{:onclick=>"$('#view > div').hide(); $('#listView').show()"} List View
+    %li#calendarViewTab{:onclick=>"$('#view > div').hide(); $('#calendarView').show()"} Calendar View
+  #views
+    = render :partial => "view"
+  
+:javascript
+  $(document).ready(function() {
+    updateListView($("#list_content").get(0));
+  });
+  

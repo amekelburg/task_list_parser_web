@@ -1,0 +1,90 @@
+#list, #view {
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  padding: 5px; }
+
+#list {
+  left: 0px;
+  width: 400px; }
+  #list textarea {
+    padding: 5px;
+    width: 100%; }
+
+#view {
+  left: 420px;
+  right: 0; }
+  #view ul#tabs {
+    overflow: hidden;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #888888; }
+    #view ul#tabs li {
+      float: left;
+      padding: 0 10px;
+      cursor: pointer;
+      color: #3333cc; }
+    #view ul#tabs li.selected {
+      color: black; }
+  #view #listView, #view #calendarView {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 27px;
+    overflow-y: auto;
+    z-index: 0; }
+  #view .selected {
+    z-index: 1; }
+  #view #listView .tl-projectList {
+    float: left;
+    width: 49%; }
+    #view #listView .tl-projectList .tl-project .tl-project {
+      margin-left: 20px; }
+    #view #listView .tl-projectList .tl-project h3 {
+      background: #ccccff;
+      font-size: 115%;
+      padding-left: 5px; }
+    #view #listView .tl-projectList .tl-project span.tl-lineNumber {
+      display: none; }
+    #view #listView .tl-projectList .tl-project ul.tl-taskList {
+      margin: 5px 0 15px 5px; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li {
+        list-style: inside disc none;
+        color: #880000; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li span.tl-taskName {
+          color: black; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li span.tl-time {
+          font-weight: bold;
+          margin-right: 4px; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li span.tl-duration {
+          margin-left: 4px;
+          color: #aa0000; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li ul.tl-subTaskList {
+          margin-left: 15px; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-done {
+        padding-left: 13px;
+        list-style: none; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-done > span.tl-taskName, #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-done > span.tl-time {
+          color: #88cc88; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-timed {
+        list-style: none; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-assigned {
+        color: #77bb77;
+        list-style-type: circle; }
+        #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task-assigned > span.taskName {
+          color: #77bb77; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-task > span.taskName {
+        color: black; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-blank-task {
+        list-style: none;
+        display: none; }
+      #view #listView .tl-projectList .tl-project ul.tl-taskList li.tl-first-blank-task {
+        display: list-item;
+        height: 1em; }
+  #view #listView .tl-dateProjects {
+    border-right: 1px solid #888888;
+    padding-right: 5px; }
+  #view #listView .tl-generalProjects {
+    padding-left: 5px;
+    border-left: 1px solid #888888;
+    margin-left: -1px; }

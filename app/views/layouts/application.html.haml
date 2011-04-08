@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Schedule-It
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'jquery-ui'
+    = javascript_include_tag 'jrails'
+    = javascript_include_tag 'application', 'list_parser'
+  %body
+    #header
+    = yield
+  
